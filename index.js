@@ -11,6 +11,7 @@
 
 const MsUp   = require('mofron-event-mouseup');
 const MsDown = require('mofron-event-mousedown');
+const ConfArg = mofron.class.ConfArg;
 
 module.exports = class extends mofron.class.Event {
     /**
@@ -51,8 +52,8 @@ module.exports = class extends mofron.class.Event {
                 }
             }
             this.component().event([
-                new MsUp(new ConfArg(evt,true)),
-                new MsDown(new ConfArg(evt, false))
+                new MsUp(new ConfArg(evt,false)),
+                new MsDown(new ConfArg(evt, true))
             ]);
         } catch (e) {
             console.error(e.stack);
